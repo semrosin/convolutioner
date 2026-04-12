@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E7170ACE-9AAD-4689-ADC6-22E048D93B80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convolutioner.Core", "src\Convolutioner.Core\Convolutioner.Core.csproj", "{523C0934-7353-45C5-AB89-DFB54C98071F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convolutioner.Cli", "src\Convolutioner.Cli\Convolutioner.Cli.csproj", "{A99E9047-15E4-492A-8C77-B2C82CAF0B0B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{5F4B7EAD-0AB8-4FBF-85F1-EA0BEE09832F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convolutioner.Tests", "test\Convolutioner.Tests\Convolutioner.Tests.csproj", "{69A51A1D-CE2E-4C75-AD2E-64ADC5F8E593}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bench", "bench", "{2507B97A-9F2C-4A9C-A7A3-58541DDFA976}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convolutioner.Benchmarks", "bench\Convolutioner.Benchmarks\Convolutioner.Benchmarks.csproj", "{4E6BFCD2-D954-4FB9-AC30-1024FA7A9A3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{523C0934-7353-45C5-AB89-DFB54C98071F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{523C0934-7353-45C5-AB89-DFB54C98071F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{523C0934-7353-45C5-AB89-DFB54C98071F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{523C0934-7353-45C5-AB89-DFB54C98071F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A99E9047-15E4-492A-8C77-B2C82CAF0B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A99E9047-15E4-492A-8C77-B2C82CAF0B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A99E9047-15E4-492A-8C77-B2C82CAF0B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A99E9047-15E4-492A-8C77-B2C82CAF0B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69A51A1D-CE2E-4C75-AD2E-64ADC5F8E593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A51A1D-CE2E-4C75-AD2E-64ADC5F8E593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A51A1D-CE2E-4C75-AD2E-64ADC5F8E593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A51A1D-CE2E-4C75-AD2E-64ADC5F8E593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E6BFCD2-D954-4FB9-AC30-1024FA7A9A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E6BFCD2-D954-4FB9-AC30-1024FA7A9A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E6BFCD2-D954-4FB9-AC30-1024FA7A9A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E6BFCD2-D954-4FB9-AC30-1024FA7A9A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{523C0934-7353-45C5-AB89-DFB54C98071F} = {E7170ACE-9AAD-4689-ADC6-22E048D93B80}
+		{A99E9047-15E4-492A-8C77-B2C82CAF0B0B} = {E7170ACE-9AAD-4689-ADC6-22E048D93B80}
+		{69A51A1D-CE2E-4C75-AD2E-64ADC5F8E593} = {5F4B7EAD-0AB8-4FBF-85F1-EA0BEE09832F}
+		{4E6BFCD2-D954-4FB9-AC30-1024FA7A9A3C} = {2507B97A-9F2C-4A9C-A7A3-58541DDFA976}
+	EndGlobalSection
+EndGlobal
