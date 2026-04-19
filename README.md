@@ -1,3 +1,36 @@
+# Запуск
+
+Для запуска приложения выполните следующую команду:
+
+```bash
+dotnet run --project src/BMPConvolver.Cli/BMPConvolver.Cli.csproj <input.bmp> <output.bmp> [опции]
+```
+
+Опции включают:
+- `--mode seq|par`: режим выполнения (последовательный или параллельный)
+- `--partition pixels|rows|cols|grid`: способ разделения работы
+- `--grid <block width>x<block height>`: размер сетки для grid partition
+- `--border zero|clamp`: режим обработки границ
+- `--kernel box3|sharpen|identity`: предустановленный kernel
+- `--kernel-text "..."`: kernel в текстовом формате
+- `--kernel-file path.txt`: kernel из файла
+
+## Тесты
+
+Для запуска тестов:
+
+```bash
+dotnet test
+```
+
+## Бенчмарки
+
+Для запуска бенчмарков:
+
+```bash
+dotnet run --project bench/BMPConvolver.Benchmarks/BMPConvolver.Benchmarks.csproj
+```
+
 # Анализ производительнсти
 - **Зависимость от ширины и высоты**: При фиксированной высоте увеличение ширины приводит к росту времени в 4-5 раз, тогда как при фиксированной ширине увеличение высоты дает рост в 2-3 раза. Такая разнца связана с особенностями кэширования памяти и последовательным доступом к данным в массивах.
 - **Зависимость от способа параллелизма**: 
