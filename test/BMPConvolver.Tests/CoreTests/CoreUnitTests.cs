@@ -238,11 +238,11 @@ public class CoreTests
         Assert.Equal(a.Height, b.Height);
 
         var width= a.Width;
-        var h = a.Height;
+        var height = a.Height;
         var x0 = Math.Clamp(marginX, 0, width);
-        var y0 = Math.Clamp(marginY, 0, h);
+        var y0 = Math.Clamp(marginY, 0, height);
         var x1 = Math.Clamp(width - marginX, 0, width);
-        var y1 = Math.Clamp(h - marginY, 0, h);
+        var y1 = Math.Clamp(height - marginY, 0, height);
 
         for (var y = y0; y < y1; y++)
         for (var x = x0; x < x1; x++)
@@ -283,11 +283,11 @@ public class CoreTests
     private static byte[] FromImageL8ToBytes(Image<L8> img)
     {
         var width= img.Width;
-        var h = img.Height;
-        var bytes = new byte[width * h];
+        var height = img.Height;
+        var bytes = new byte[width * height];
         img.ProcessPixelRows(accessor =>
         {
-            for (var y = 0; y < h; y++)
+            for (var y = 0; y < height; y++)
             {
                 var row = accessor.GetRowSpan(y);
                 var dstRow = y * width;

@@ -51,19 +51,19 @@ public static class Partitioner
         var baseHeight = height / gridY;
         var remHeight = height % gridY;
 
-        var y0 = 0;
+        var curY = 0;
         for (var gy = 0; gy < gridY; gy++)
         {
             var squareHeight = baseHeight + (gy < remHeight ? 1 : 0); // первые remHeight блоков выше на 1 пиксель
-            var x0 = 0;
+            var curX = 0;
             for (var gx = 0; gx < gridX; gx++)
             {
                 var squareWidth = baseWidth + (gx < remWidth ? 1 : 0); // первые remWidth блоков шире на 1 пиксель
-                yield return new WorkRect(x0, y0, squareWidth, squareHeight);
+                yield return new WorkRect(curX, curY, squareWidth, squareHeight);
 
-                x0 += squareWidth;
+                curX += squareWidth;
             }
-            y0 += squareHeight;
+            curY += squareHeight;
         }
     }
 }

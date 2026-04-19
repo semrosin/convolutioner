@@ -93,31 +93,31 @@ public sealed class Kernel
     /// </summary>
     public static Kernel Compose(Kernel a, Kernel b)
     {
-        var w = a.Width + b.Width - 1;
-        var h = a.Height + b.Height - 1;
-        var cx = a.CenterX + b.CenterX;
-        var cy = a.CenterY + b.CenterY;
-        var weights = new float[w * h];
+        var width = a.Width + b.Width - 1;
+        var height = a.Height + b.Height - 1;
+        var centerX = a.CenterX + b.CenterX;
+        var centerY = a.CenterY + b.CenterY;
+        var weights = new float[width * height];
 
-        for (var by = 0; by < b.Height; by++)
-        for (var bx = 0; bx < b.Width; bx++)
+        for (var bY = 0; bY < b.Height; bY++)
+        for (var bX = 0; bX < b.Width; bX++)
         {
-            var bw = b.Get(bx, by);
-            if (bw == 0f) continue;
+            var bWeight = b.Get(bX, bY);
+            if (bWeight == 0f) continue;
 
-            for (var ay = 0; ay < a.Height; ay++)
-            for (var ax = 0; ax < a.Width; ax++)
+            for (var aY = 0; aY < a.Height; aY++)
+            for (var aX = 0; aX < a.Width; aX++)
             {
-                var aw = a.Get(ax, ay);
-                if (aw == 0f) continue;
+                var aWeight = a.Get(aX, aY);
+                if (aWeight == 0f) continue;
 
-                var rx = ax + bx;
-                var ry = ay + by;
-                weights[(ry * w) + rx] += bw * aw;
+                var rX = aX + bX;
+                var rY = aY + bY;
+                weights[(rY * width) + rX] += bWeight * aWeight;
             }
         }
 
-        return new Kernel(w, h, cx, cy, weights);
+        return new Kernel(width, height, centerX, centerY, weights);
     }
 
     public Kernel PadZeros(int padLeft, int padTop, int padRight, int padBottom)
